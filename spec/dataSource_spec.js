@@ -70,3 +70,16 @@ describe('load data sources', function() {
     });
   });
 });
+
+describe('handle', function() {
+  it("sends the specified file's contents to handleContents", function(done) {
+    var source = new dataSource.DataSource();
+    source.handleContents = function(contents, cb) {
+      expect(contents).toEqual('Turning and turning in the widening gyre, ' +
+                               'the falcon cannot hear the falconer.\n');
+      cb();
+    };
+
+    source.handle(path.join(__dirname, 'fixtures', 'some_text.txt'), done);
+  });
+});
