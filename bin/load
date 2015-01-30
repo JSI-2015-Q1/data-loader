@@ -4,6 +4,7 @@
 
 var commander = require('commander');
 var dataSource = require('../lib/dataSource');
+var loadRecords = require('../lib/loadRecords');
 
 commander
   .version('0.0.1')
@@ -15,6 +16,6 @@ var files = commander.args;
 
 dataSource.loadDataSources(function(dataSources) {
     files.forEach(function(file) {
-        dataSources.handler(file).handle(file);
+        dataSources.handler(file).handle(file, loadRecords.load);
     });
 });
