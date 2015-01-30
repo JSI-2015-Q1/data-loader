@@ -16,5 +16,5 @@ var files = commander.args;
 dataSource.loadDataSources(function(dataSources) {
     files.forEach(function(file) {
         dataSources.handler(file).handle(file);
-    })
-})
+    });
+});
