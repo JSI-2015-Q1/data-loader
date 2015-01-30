@@ -1,0 +1,20 @@
+#!/usr/bin/env node
+
+'use strict';
+
+var commander = require('commander');
+var dataSource = require('../lib/dataSource');
+
+commander
+  .version('0.0.1')
+  .parse(process.argv);
+
+var files = commander.args;
+
+
+
+dataSource.loadDataSources(function(dataSources) {
+    files.forEach(function(file) {
+        dataSources.handler(file).handle(file);
+    })
+})
