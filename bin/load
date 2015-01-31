@@ -8,11 +8,16 @@ var loadRecords = require('../lib/loadRecords');
 
 commander
   .version('0.0.1')
+  .option('-d, --database [database]', 'Database name into which to load data')
+  .option('-u, --user [user]', 'Username with which to connect to the database')
   .parse(process.argv);
 
+loadRecords.configure({
+  database: commander.database,
+  user: commander.user
+});
+
 var files = commander.args;
-
-
 
 dataSource.loadDataSources(function(dataSources) {
     files.forEach(function(file) {
