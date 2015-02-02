@@ -2,19 +2,19 @@
 
 Data loader exercise for PCS's JSI class.
 
-## `bin/load`
+### `bin/load`
 
 This script will attempt to import the given datafile into your database.
 
-## `lib/dataSource.js`
+### `lib/dataSource.js`
 
 This module provides low-level base classes for implementing your data transformers ("dataSources").
 
-## `lib/dataSources/`
+### `lib/dataSources/`
 
 Place data transformers in individual modules in this directory. Check out [`userSource.js`](blob/master/lib/dataSources/userSource.js) for a simple example of how a dataSource should look.
 
-## `data/`
+### `data/`
 
 This directory contains the data files you should load into the database. In order from cleanest to dirtiest, they are:
 
